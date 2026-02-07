@@ -1,5 +1,7 @@
 'use client';
 
+import { Card, CardBody, CardHeader } from "@material-tailwind/react";
+
 export default function Services() {
   const mapServices = [
     {
@@ -87,14 +89,14 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {mapServices.map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition border-t-4 border-blue-500"
-              >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h4 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h4>
-                <p className="text-gray-600">{service.description}</p>
-              </div>
+              <Card key={index} className="border-t-4 border-blue-500 shadow-md hover:shadow-lg transition-shadow">
+                <CardBody />
+                <div className="p-8">
+                  <div className="text-5xl mb-4">{service.icon}</div>
+                  <h4 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h4>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -106,14 +108,14 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {itServices.map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition border-t-4 border-green-500"
-              >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h4 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h4>
-                <p className="text-gray-600">{service.description}</p>
-              </div>
+              <Card key={index} className="border-t-4 border-green-500 shadow-md hover:shadow-lg transition-shadow">
+                <CardBody />
+                <div className="p-8">
+                  <div className="text-5xl mb-4">{service.icon}</div>
+                  <h4 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h4>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -125,14 +127,14 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {infrastructure.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100"
-              >
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h4 className="text-lg font-semibold mb-2 text-gray-900">{item.title}</h4>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </div>
+              <Card key={index} className="shadow-md hover:shadow-lg transition-shadow hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100">
+                <CardBody />
+                <div className="p-6">
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  <h4 className="text-lg font-semibold mb-2 text-gray-900">{item.title}</h4>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </div>
+              </Card>
             ))}
           </div>
         </div>

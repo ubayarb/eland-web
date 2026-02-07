@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Card, CardBody, Input, Textarea, Button, Alert } from "@material-tailwind/react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,14 +41,101 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-lg shadow text-center">
-            <p className="text-4xl mb-3">📧</p>
-            <h3 className="font-bold text-lg mb-2">Имэйл</h3>
-            <a href="mailto:info@eland.mn" className="text-blue-600 hover:text-blue-800">
-              info@eland.mn
-            </a>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow text-center">
+          <Card className="shadow-md">
+            <CardBody className="text-center">
+              <p className="text-4xl mb-3">📧</p>
+              <h3 className="font-bold text-lg mb-2">Имэйл</h3>
+              <a href="mailto:info@eland.mn" className="text-blue-600 hover:text-blue-800">
+                info@eland.mn
+              </a>
+            </CardBody>
+          </Card>
+          <Card className="shadow-md">
+            <CardBody className="text-center">
+              <p className="text-4xl mb-3">📞</p>
+              <h3 className="font-bold text-lg mb-2">Утас</h3>
+              <a href="tel:+97611111111" className="text-blue-600 hover:text-blue-800">
+                +976 (11) 1111-1111
+              </a>
+            </CardBody>
+          </Card>
+          <Card className="shadow-md">
+            <CardBody className="text-center">
+              <p className="text-4xl mb-3">📍</p>
+              <h3 className="font-bold text-lg mb-2">Хаяг</h3>
+              <p className="text-gray-600">
+                Улаанбаатар, Монгол
+              </p>
+            </CardBody>
+          </Card>
+        </div>
+
+        <Card className="shadow-lg">
+          <CardBody>
+            <form onSubmit={handleSubmit} className="p-8">
+              {submitted && (
+                <Alert color="green" className="mb-6">
+                  ✓ Таны мессежийг амжилттай илгээлээ. Тун удахн бид синээ сүүлийн холбоо барих болно!
+                </Alert>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <Input
+                  type="text"
+                  name="name"
+                  label="Нэр *"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  label="Имэйл *"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <Input
+                  type="tel"
+                  name="phone"
+                  label="Утас"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="company"
+                  label="Байгууллага"
+                  value={formData.company}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="mb-6">
+                <Textarea
+                  name="message"
+                  label="Мессеж *"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  required
+                />
+              </div>
+
+              <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 font-bold text-lg capitalize">
+                Илгээх
+              </Button>
+            </form>
+          </CardBody>
+        </Card>
+      </div>
+    </section>
+  );
+}
             <p className="text-4xl mb-3">📞</p>
             <h3 className="font-bold text-lg mb-2">Утас</h3>
             <a href="tel:+97611111111" className="text-blue-600 hover:text-blue-800">
