@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-blue-200 text-lg mb-2">🧭 ГИС & ИТ ШИЙДЛҮҮД</p>
+          <p className="text-blue-200 text-lg mb-2">🧭 ГАЗАР ЗҮЙН МЭДЭЭЛЛИЙН СИСТЕМ & МЭДЭЭЛЛИЙН ТЕХНОЛОГИЙН ШИЙДЭЛ</p>
           <h1 className="text-6xl font-bold mb-6 leading-tight">
             Газрын Зураг Дээр Суурилсан Ухаалаг Шийдвэр
           </h1>
