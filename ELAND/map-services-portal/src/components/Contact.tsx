@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, CardBody, Input, Textarea, Button, Alert } from "@material-tailwind/react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -41,101 +40,14 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="shadow-md">
-            <CardBody className="text-center">
-              <p className="text-4xl mb-3">📧</p>
-              <h3 className="font-bold text-lg mb-2">Имэйл</h3>
-              <a href="mailto:info@eland.mn" className="text-blue-600 hover:text-blue-800">
-                info@eland.mn
-              </a>
-            </CardBody>
-          </Card>
-          <Card className="shadow-md">
-            <CardBody className="text-center">
-              <p className="text-4xl mb-3">📞</p>
-              <h3 className="font-bold text-lg mb-2">Утас</h3>
-              <a href="tel:+97611111111" className="text-blue-600 hover:text-blue-800">
-                +976 (11) 1111-1111
-              </a>
-            </CardBody>
-          </Card>
-          <Card className="shadow-md">
-            <CardBody className="text-center">
-              <p className="text-4xl mb-3">📍</p>
-              <h3 className="font-bold text-lg mb-2">Хаяг</h3>
-              <p className="text-gray-600">
-                Улаанбаатар, Монгол
-              </p>
-            </CardBody>
-          </Card>
-        </div>
-
-        <Card className="shadow-lg">
-          <CardBody>
-            <form onSubmit={handleSubmit} className="p-8">
-              {submitted && (
-                <Alert color="green" className="mb-6">
-                  ✓ Таны мессежийг амжилттай илгээлээ. Тун удахн бид синээ сүүлийн холбоо барих болно!
-                </Alert>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <Input
-                  type="text"
-                  name="name"
-                  label="Нэр *"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  label="Имэйл *"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <Input
-                  type="tel"
-                  name="phone"
-                  label="Утас"
-                  value={formData.phone}
-                  onChange={handleChange}
-                />
-                <Input
-                  type="text"
-                  name="company"
-                  label="Байгууллага"
-                  value={formData.company}
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div className="mb-6">
-                <Textarea
-                  name="message"
-                  label="Мессеж *"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  required
-                />
-              </div>
-
-              <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 font-bold text-lg capitalize">
-                Илгээх
-              </Button>
-            </form>
-          </CardBody>
-        </Card>
-      </div>
-    </section>
-  );
-}
+          <div className="bg-white p-6 rounded-lg shadow text-center">
+            <p className="text-4xl mb-3">📧</p>
+            <h3 className="font-bold text-lg mb-2">Имэйл</h3>
+            <a href="mailto:info@eland.mn" className="text-blue-600 hover:text-blue-800">
+              info@eland.mn
+            </a>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow text-center">
             <p className="text-4xl mb-3">📞</p>
             <h3 className="font-bold text-lg mb-2">Утас</h3>
             <a href="tel:+97611111111" className="text-blue-600 hover:text-blue-800">
@@ -151,80 +63,80 @@ export default function Contact() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
-          {submitted && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-              ✓ Таны мессежийг амжилттай илгээлээ. Тун удахн бид синээ сүүлийн холбоо барих болно!
-            </div>
-          )}
+        <div className="bg-white p-8 rounded-lg shadow-lg">
+          <form onSubmit={handleSubmit}>
+              {submitted && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+                  ✓ Таны мессежийг амжилттай илгээлээ. Тун удахн бид синээ сүүлийн холбоо барих болно!
+                </div>              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Нэр *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Имэйл *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Нэр *</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Имэйл *</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                required
-              />
-            </div>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Утас</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Байгууллага</label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  />
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Утас</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Байгууллага</label>
-              <input
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-              />
-            </div>
-          </div>
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Мессеж *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  required
+                />
+              </div>
 
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Мессеж *</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={5}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-bold hover:from-blue-700 hover:to-blue-800 transition text-lg"
-          >
-            Илгээх
-          </button>
-        </form>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-bold hover:from-blue-700 hover:to-blue-800 transition text-lg"
+              >
+                Илгээх
+              </button>
+            </form>
+        </div>
       </div>
     </section>
   );

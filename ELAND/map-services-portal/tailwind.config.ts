@@ -11,6 +11,6 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [require("@material-tailwind/react/utils/MaterialTailwindStylesPlugin")],
+  plugins: [],
 }
 export default config

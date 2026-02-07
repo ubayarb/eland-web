@@ -1,7 +1,5 @@
 'use client';
 
-import { Button, Card, CardBody } from "@material-tailwind/react";
-
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-24 px-4">
@@ -17,33 +15,27 @@ export default function Hero() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-white/10 backdrop-blur-sm border border-white/20">
-            <CardBody>
-              <p className="text-3xl mb-3">📊</p>
-              <h3 className="font-bold text-lg mb-2 text-white">Өгөгдөл</h3>
-              <p className="text-blue-100 text-sm">Бодит мэдээлэл цуглуулалт</p>
-            </CardBody>
-          </Card>
-          <Card className="bg-white/10 backdrop-blur-sm border border-white/20">
-            <CardBody>
-              <p className="text-3xl mb-3">🗺️</p>
-              <h3 className="font-bold text-lg mb-2 text-white">Газрын Зураг</h3>
-              <p className="text-blue-100 text-sm">Орон зайн дүрслэл ба анализ</p>
-            </CardBody>
-          </Card>
-          <Card className="bg-white/10 backdrop-blur-sm border border-white/20">
-            <CardBody>
-              <p className="text-3xl mb-3">💡</p>
-              <h3 className="font-bold text-lg mb-2 text-white">Шийдвэр</h3>
-              <p className="text-blue-100 text-sm">Үр дүнтэй удирдлага болон төлөвлөлт</p>
-            </CardBody>
-          </Card>
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+            <p className="text-3xl mb-3">📊</p>
+            <h3 className="font-bold text-lg mb-2 text-white">Өгөгдөл</h3>
+            <p className="text-blue-100 text-sm">Бодит мэдээлэл цуглуулалт</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+            <p className="text-3xl mb-3">🗺️</p>
+            <h3 className="font-bold text-lg mb-2 text-white">Газрын Зураг</h3>
+            <p className="text-blue-100 text-sm">Орон зайн дүрслэл ба анализ</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+            <p className="text-3xl mb-3">💡</p>
+            <h3 className="font-bold text-lg mb-2 text-white">Шийдвэр</h3>
+            <p className="text-blue-100 text-sm">Үр дүнтэй удирдлага болон төлөвлөлт</p>
+          </div>
         </div>
         
         <div className="text-center">
-          <Button className="bg-white text-blue-700 px-8 py-3 font-bold hover:bg-blue-50 text-lg capitalize">
+          <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 text-lg">
             Манай Үйлчилгээтэй Танилцуулах
-          </Button>
+          </button>
         </div>
       </div>
     </section>
