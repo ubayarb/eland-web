@@ -19,7 +19,7 @@ export default function Header() {
             <li><a href="#approach" className="text-gray-700 hover:text-blue-600 font-medium">Хандлага</a></li>
             <li><a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">Бидний Тухай</a></li>
             <li><a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Холбоо</a></li>
-            <li><a href="https://map.eland.mn" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 font-medium">MAP</a></li>
+            <li><a href="http://map.eland.mn/geoserver" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 font-medium">Газрын Зураг</a></li>
             <li><a href="http://gps.eland.mn/track/Track" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 font-medium">GPS Хяналтын систем</a></li>
           </ul>
           <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">
